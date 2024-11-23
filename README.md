@@ -15,4 +15,5 @@ Frontend: HTML, CSS, JavaScript
 Backend: Flask (Python)
 Database: SQLite
 Recommendation Algorithm: Content-based filtering using TF-IDF and cosine similarity.
+
 Explore the project to learn how web technologies can create an interactive and effective recommendation system!
