@@ -1,0 +1,202 @@
+body{
+    background-color: black;
+}
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height: 13%;
+    background-color: black;
+    z-index: 100;
+}
+.heading{
+    text-align: center !important;
+    margin-top: 20px;
+    font-size:2.7rem;
+    color: whitesmoke;
+}
+
+.about-img img{
+    position: relative;
+    height: 280px;
+    width:280px;
+    top:150px;
+    
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(67, 67, 67, 0.5);
+    margin-left: 80px;
+}
+.about-content{
+    position: absolute;
+    top: 100px;
+    margin-right: 150px;
+    left:450px
+}
+.about-content h2{
+    text-align: left;
+    font-size: 2rem;
+    color: rgb(189, 41, 41);
+}
+.about-content p{
+    font-size: 1.5rem;
+    margin:2rem 0 3rem;
+    color:rgb(63, 63, 244);
+}
+.about-content a{
+    font-size: 1.5rem;
+    margin:2rem 0 3rem;
+    text-decoration: none;
+    color: rgb(85, 85, 248);
+}
+.about-content a:hover{
+    text-decoration:underline;
+}
+
+.about-content span{
+    display: flex;
+    color: rgb(143, 143, 241);
+}
+.home-icon{
+    font-size: xx-large;
+    color: rgb(189, 41, 41);
+    position: absolute;
+    left: 20px;
+    top: 25px;
+}
+.home-icon:hover{
+    color: rgb(243, 202, 202);
+}
+#goback{
+    background-color: transparent;
+    color: whitesmoke;
+    font-size: medium;
+    border: 0px;
+    position: absolute;
+    top : 70px;
+}
+.form-container{
+
+    display: flex;
+    flex-direction: column;
+    gap:5rem;
+    flex-grow: 100;
+    position: absolute;
+    top: 700px;
+    left:40px;
+}
+#open-form{
+    position: absolute;
+    top: 600px;
+    left:120px;
+    padding: 0rem 1rem 0rem 1rem;
+    font-size: large;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    color: black;
+}
+#open-reviews{
+    position: absolute;
+    width:200px;
+    top: 300px;
+    left:70px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0rem 1rem 0rem 1rem;
+    font-size: large;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+#open-reviews:hover {
+    border: 1px solid rgb(254, 106, 106);
+}
+.rev{
+    display: flex;
+    flex-direction: row;
+}
+.rev #author{
+    padding-right: 3.5rem;
+}
+#author{
+    font-size: 1.4rem;
+    font-weight: 700;
+
+}
+#time{
+    font-size: 0.9rem;
+    color: rgb(158, 156, 156);
+}
+#day{
+    font-size: 0.8rem;
+    color:rgb(249, 155, 155);
+    font-style: italic;
+}
+.form-container label{
+    display: block;
+    color: rgb(251, 249, 249);
+    font-size: 1.2rem;
+    padding-top: 1.5rem;
+}
+.form-container input{
+    color: rgb(189, 41, 41);
+    width: 300px;
+    height: 30px;
+    background-color: black;
+    border: 0px;
+    border-bottom: 1px solid rgb(178, 172, 172);
+}
+.form-container textarea{
+    width: 300px;
+    height: 60px;
+    background-color: black;
+    color: rgb(189, 41, 41);
+    margin-bottom: 10px;
+    border: 0;
+    border-bottom: 1px solid rgb(178, 172, 172);
+}
+.reviews-container{
+    display: none;
+}
+
+
+.reviews-container.clicked{
+    display: block;
+}
+.review{
+    color: rgb(189, 41, 41);
+    border: 1px solid white;
+    margin-top: 50px;
+    border-radius: 20px;
+    padding-left:1rem;
+    background-color: black;
+    width: 300px;
+    overflow-x: auto; 
+    padding-right: 1rem;
+}
+#content {
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.5; 
+    font-size: medium;
+  }
+.reviewform button{
+    border-radius: 20px;
+    box-shadow: 0 0 0.2rem whitesmoke;
+    color: black;
+    font-weight: 700;
+    background-color: aliceblue;
+    padding: 0.5rem 1rem 0.5rem 1rem ;
+    cursor: pointer;
+
+}
+.reviewform button:hover{
+    transform: scale(1.05);
+}
+.flex-container{
+    display: flex;
+}
+.hidden {
+    display: none;
+}

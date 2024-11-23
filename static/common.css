@@ -1,0 +1,190 @@
+body{
+    background-color: black;
+}
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height: 5%;
+    padding:2rem 9%;
+    background-color: rgb(2, 2, 2);
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+.noresults {
+    font-size: large;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.common-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+  
+.common-box {
+    width: calc(16.6667% - 20px);
+    margin: 10px;
+    position: relative;
+    margin-top: 130px;
+    border: 2px solid white;
+    border-radius: 20px; 
+    box-shadow: 0 0 1rem white;
+}
+  
+.common-box img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+}  
+.common-box:hover{
+    box-shadow: 0 0 1rem rgb(246, 170, 170);
+}
+.common-box:hover img {
+    opacity: 0.7;
+}
+.common-box.clicked {
+    transform: scale(1.1); 
+}
+  
+.common-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+  
+.common-box:hover .common-layer {
+    opacity: 100;
+}
+  
+.common-layer h3 {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+.common-layer p{
+    color: rgb(242, 135, 135);
+    text-align:center;
+    font-style: italic;
+    font-weight: 700;
+    font-size: large;
+
+}
+.common-layer h4{
+    color: rgb(107, 107, 239);
+    text-align: center;
+}
+.common-layer i{
+    color: salmon;
+}
+  
+.heading{
+    text-align:center !important;
+    font-size:2.5rem;
+    color: rgb(189, 41, 41);
+    margin-top: 25x;
+}
+.heading span{
+    color: white;
+}
+.heading span:hover {
+    color: rgb(42, 42, 134);
+}
+#loadmore {
+    top :40px;
+    right: 20px;
+    border: 1px solid #5e0202;
+    border-radius: 40px;
+    box-shadow: 0 0 1rem white;
+    font-weight: 700;
+    cursor: pointer;
+    color: grey;
+    letter-spacing: 2px;
+    padding: 1rem 1rem;
+}
+#loadmore:hover{
+    color:rgb(57, 56, 56)
+}
+.home-icon{
+    font-size: xx-large;
+    color: rgb(189, 41, 41);
+    position: absolute;
+    left: 20px;
+    top: 25px;
+}
+.home-icon:hover{
+    color: rgb(243, 202, 202);
+}
+#goback{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    border: 0px;
+    position: absolute;
+    top : 70px;
+    left : 5px;
+}
+#topButton{
+    position: fixed;
+    top:100px;
+    right:20px;
+    border:0px;
+    border-radius: 30px;
+    padding: 0.5rem 0rem 0.5rem 0rem ;
+    font-size: 1rem;
+    background-color: rgb(42, 42, 134);
+    color: rgb(254, 254, 254);
+    box-shadow: 0 0 1rem rgb(187, 54, 54);
+    cursor: pointer;
+    z-index: 101;
+}
+#bottomButton{
+    position: fixed;
+    bottom:40px;
+    right:20px;
+    border:0px;
+    border-radius: 30px;
+    padding: 0.5rem 0rem 0.5rem 0rem ;
+    font-size: 1rem;
+    background-color: rgb(42, 42, 134);
+    color: rgb(254, 254, 254);
+    box-shadow: 0 0 1rem rgb(187, 54, 54);
+    cursor: pointer;
+    z-index: 101;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    z-index: 9999;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='mainpage.css') }}" rel="stylesheet">
+    <title>Main Page</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('login') }}">LOGIN</a>
+        <a href="{{ url_for('signup') }}">SIGN UP</a>
+    </nav>
+    <h1 class="mainheading">Flick Fix <span>Movies</span></h1>
+    <div class="heading">
+        <h1>Uncover hidden movie gems based on your taste</h1>
+        <br>
+        <h2> Your Movie, Perfectly Matched</h2> 
+    </div>
+</body>
+</html>

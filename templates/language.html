@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Language based movies</title>
+    <link href="{{ url_for('static', filename='common.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <header class="header">
+        <i class="fa-solid fa-house home-icon"></i>
+        <a href="/home#language" id ="goback"><i class="fa-solid fa-arrow-left"></i> Back</a>
+        <h1 class = "heading">Recommendations for <span>"{{ language.title() }}"</span></h1>
+        <form action="{{ url_for('loadmorelanguage') }}" method="POST">
+            <input type="hidden" id="start" name="start" value="{{ start }}">
+            <input type="hidden" id="end" name="end" value="{{ end }}">
+            <input type="hidden" id="search" name="search" value="{{ language }}">
+            {% if movies %}
+            <div>
+                {% if end >= length %}
+                <input type="submit" id="loadmore" value="load more" style="display: none;">
+                {% else %}
+                <input type="submit" id="loadmore" value="load more">
+                {% endif %}
+            </div>
+            {% else %}
+            <input type="submit" id="loadmore" value="load more" style="display: none;">
+            {% endif %}
+        </form>
+    </header>
+    <div id="movie-list">
+        {% if movies %}
+        <button id="topButton"><i class="fa-solid fa-angles-up"></i></button>
+        <button id="bottomButton"><i class="fa-solid fa-angles-down"></i></button>
+            <div class="common-container">
+                {% for movie in movies[start:end] %}
+                <div class="common-box"  onclick="movie(this ,'{{ movie[4] }}','{{ language }}','{{ start }}','{{ end }}')">
+                    <img src="{{ movie[1] }}" alt="image" style="border: 1px;border-radius: 20px;"/>
+                    <div class="common-layer">
+                        <h3>{{ movie[0] }}</h3>
+                        <p>{{ movie[2] }}</p>
+                        <h4>Rating: {{ movie[3] }}/10</h4>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+        <div class="noresults">
+            <p>We could not find results for : {{ language }}</p>
+            <p>Please try a different language</p>
+        </div>
+            
+        {% endif %}
+    </div>
+    <script>
+        const homeicon = document.querySelector(".home-icon");
+        const topButton = document.getElementById('topButton');
+        const bottomButton = document.getElementById('bottomButton');
+        
+        topButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+                });
+        });
+        bottomButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth' 
+                });
+        });
+        homeicon.addEventListener("click", function(){
+            window.location.href = "{{ url_for('home') }}";
+        })
+        function movie(box,movie_id,search,start,end){
+            box.classList.toggle("clicked");
+            const loadingElement = document.createElement('div');
+            loadingElement.classList.add('loading');
+            loadingElement.textContent = 'Loading...';
+            document.body.appendChild(loadingElement);
+            setTimeout(() => {
+                const form = document.createElement('form');
+                form.method = "POST";
+                form.action = `/movie/${movie_id}`;
+                const searchinput = document.createElement('input');
+                const startinput = document.createElement('input');
+                const endinput = document.createElement('input');
+                searchinput.type = "hidden";
+                searchinput.name = "search";
+                searchinput.value = search;
+                startinput.type = "hidden";
+                startinput.name = "start";
+                startinput.value = start;
+                endinput.type = "hidden";
+                endinput.name = "end";
+                endinput.value = end;
+                form.appendChild(searchinput);
+                form.appendChild(startinput);
+                form.appendChild(endinput);
+                document.body.appendChild(form);
+                form.submit();
+            }, 1500);
+        }
+    </script>
+</body>
+</html>

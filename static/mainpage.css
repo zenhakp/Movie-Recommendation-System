@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+:root{
+    --bg-color:black;
+    --second-bg-color: grey;
+    --text-color: rgb(189, 41, 41);
+    --main-color: white;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    list-style-type: none;
+    text-decoration: none;
+    border:none;
+    outline:none;
+    font-family: "DM Serif Display", sans-serif;
+}
+body{
+    perspective: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("login_signin.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(20px);
+}
+span{
+    color:var(--main-color)
+}
+.navbar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute; /* Position navbar absolutely */
+    top: 20px; /* Adjust top position as needed */
+    right: 20px
+}
+.navbar a{
+    font-size:2rem;
+    font-weight: 500;
+    color:var(--text-color);
+    transition: 0.3s;
+    padding: 1rem 1.5rem;
+}
+.navbar a:hover{
+    color:var(--main-color);
+}
+.mainheading{
+    color: var(--text-color);
+    font-size: 3.5rem;
+    font-weight: 500;
+    position: absolute;
+    top: 120px;
+    text-align: center;
+    animation: imageanimation 1s ease-in-out ;
+}
+.heading{
+    animation: secanimation 2s ease-in-out ;
+}
+
+.heading h1{
+    font-size: 40px;
+    text-align: center;
+    color: var(--main-color);
+    font-style: italic;
+}
+.heading h2{
+    font-size: 20px;
+    text-align: center;
+    color: var(--main-color);
+    font-style: bold;
+}
+@keyframes imageanimation {
+    0% {
+        transform: translateZ(2000px)
+    }
+    100%{
+        transform: translateZ(0);
+    }
+}
+@keyframes secanimation {
+    0%{
+        transform: translateX(-1500px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
